@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <title>แจ้งยอดการผลิต</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .boxlohinform {
+            background-color: #fff;
+            padding: 10px;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+        }
+
+
+        .fadeInDown {
+            -webkit-animation-name: fadeInDown;
+            animation-name: fadeInDown;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        @-webkit-keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            opacity: 0;
+            -webkit-animation: fadeIn ease-in 1;
+            -moz-animation: fadeIn ease-in 1;
+            animation: fadeIn ease-in 1;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            animation-duration: 1s;
+        }
+
+        .fadeIn.first {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            -webkit-animation-delay: 0.4s;
+            -moz-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+        }
+
+        .fadeIn.second {
+            -webkit-animation-delay: 0.6s;
+            -moz-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+        }
+
+        .fadeIn.third {
+            -webkit-animation-delay: 0.8s;
+            -moz-animation-delay: 0.8s;
+            animation-delay: 0.8s;
+        }
+
+        .fadeIn.fourth {
+            -webkit-animation-delay: 1s;
+            -moz-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+
+        .underlineHover:after {
+            display: block;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 2px;
+            background-color: #56baed;
+            content: "";
+            transition: width 0.2s;
+        }
+
+        .underlineHover:hover {
+            color: #0d0d0d;
+        }
+
+        .underlineHover:hover:after {
+            width: 100%;
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        #icon {
+            width: 60%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body style="background-color: #56baed;">
+    <div class="container body-content">
+
+        <div style="margin-top: 10px;">
+            <div class="liffAppContent" style="max-width:450px;margin:auto">
+                <div class="animate form login_form boxlohinform fadeInDown">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-12 col-xs-12" style="text-align: left; font-size: 30px;">
+                                    <span>แจ้งยอดการผลิต</span>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6 form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="font-size: 13px">หลอดใหญ่ : </label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="number" id="text_L_Big" class="form-control max-wide"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="font-size: 13px">รวมP2 : </label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="number" id="text_sum_P2" class="form-control max-wide"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6 form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="font-size: 13px">PB : </label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="number" id="text_PB" class="form-control max-wide"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="font-size: 13px">Pc-B : </label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="number" id="text_Pc_B" class="form-control max-wide"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6 form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="font-size: 13px">หลอดเล็ก : </label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="number" id="text_L_small" class="form-control max-wide"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="font-size: 13px">กระสอบ : </label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="number" id="text_KS" class="form-control max-wide"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6 form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="font-size: 13px">PS : </label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="number" id="text_PS" class="form-control max-wide"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="font-size: 13px">Pc-S : </label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="number" id="text_Pc_S" class="form-control max-wide"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-warning" style="float: right"
+                                        id="btnTest">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <footer>
+            <p>&copy; 2019 - IOT Smart Automation Patkol</p>
+        </footer>
+
+
+
+        <div id="Excemple" style="display:none;">
+            <!-- ACTION BUTTONS -->
+            <div class="buttonGroup">
+                <div class="buttonRow">
+                    <button id="openWindowButton">Open External Window</button>
+                    <button id="closeWindowButton">Close LIFF App</button>
+                </div>
+                <div class="buttonRow">
+                    <button id="scanQrCodeButton">Open QR Code Reader</button>
+                    <button id="sendMessageButton">Send Message</button>
+                </div>
+                <div class="buttonRow">
+                    <button id="getAccessToken">Get Access Token</button>
+                    <button id="getProfileButton">Get Profile</button>
+                </div>
+            </div>
+            <!-- ACCESS TOKEN DATA -->
+            <div id="accessTokenData" class="hidden textLeft">
+                <h2>Access Token</h2>
+                <a href="#" onclick="toggleAccessToken()">Close Access Token</a>
+                <table>
+                    <tr>
+                        <th>accessToken</th>
+                        <td id="accessTokenField"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- SCAN QR RESULT -->
+            <div id="scanQr" class="hidden textLeft">
+                <h2>QR Code reader</h2>
+                <a href="#" onclick="toggleQRCodeReader()">Close QR Code Reader Result</a>
+                <table>
+                    <tr>
+                        <th>scanCode Result</th>
+                        <td id="scanQrField"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- PROFILE INFO -->
+            <div id="profileInfo" class="hidden textLeft">
+                <h2>Profile</h2>
+                <a href="#" onclick="toggleProfileData()">Close Profile</a>
+                <div id="profilePictureDiv">
+                </div>
+                <table>
+                    <tr>
+                        <th>userId</th>
+                        <td id="userIdProfileField"></td>
+                    </tr>
+                    <tr>
+                        <th>displayName</th>
+                        <td id="displayNameField"></td>
+                    </tr>
+                    <tr>
+                        <th>statusMessage</th>
+                        <td id="statusMessageField"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- LIFF DATA -->
+            <div id="liffData">
+                <h2 id="liffDataHeader" class="textLeft">LIFF Data</h2>
+                <table>
+                    <tr>
+                        <th>OS</th>
+                        <td id="deviceOS" class="textLeft"></td>
+                    </tr>
+                    <tr>
+                        <th>Language</th>
+                        <td id="browserLanguage" class="textLeft"></td>
+                    </tr>
+                    <tr>
+                        <th>LIFF SDK Version</th>
+                        <td id="sdkVersion" class="textLeft"></td>
+                    </tr>
+                    <tr>
+                        <th>isInClient</th>
+                        <td id="isInClient" class="textLeft"></td>
+                    </tr>
+                    <tr>
+                        <th>isLoggedIn</th>
+                        <td id="isLoggedIn" class="textLeft"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- LOGIN LOGOUT BUTTONS -->
+            <div class="buttonGroup">
+                <button id="liffLoginButton">Log in</button>
+                <button id="liffLogoutButton">Log out</button>
+            </div>
+            <div id="statusMessage">
+                <div id="isInClientMessage"></div>
+                <div id="apiReferenceMessage">
+                    <p>Available LIFF methods vary depending on the browser you use to open the LIFF app.</p>
+                    <p>Please refer to the <a
+                            href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">API
+                            reference page</a> for more information.</p>
+                </div>
+            </div>
+            <!-- LIFF ID ERROR -->
+            <div id="liffIdErrorMessage" class="hidden">
+                <p>You have not assigned any value for LIFF ID.</p>
+                <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your
+                    Heroku
+                    account follwing the below steps: </p>
+                <code id="code-block">
+                <ol>
+                    <li>Go to `Dashboard` in your Heroku account.</li>
+                    <li>Click on the app you just created.</li>
+                    <li>Click on `Settings` and toggle `Reveal Config Vars`.</li>
+                    <li>Set `MY_LIFF_ID` as the key and the LIFF ID as the value.</li>
+                    <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
+                </ol>
+            </code>
+                <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
+                <p>For more information about how to add your LIFF ID, see <a
+                        href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF
+                        app</a>.
+                </p>
+            </div>
+            <!-- LIFF INIT ERROR -->
+            <div id="liffInitErrorMessage" class="hidden">
+                <p>Something went wrong with LIFF initialization.</p>
+                <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an
+                    error
+                    occurs in the process of <code>liff.init()</code>.
+            </div>
+            <!-- NODE.JS LIFF ID ERROR -->
+            <div id="nodeLiffIdErrorMessage" class="hidden">
+                <p>Unable to receive the LIFF ID as an environment variable.</p>
+            </div>
+            <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+            <script src="liff-starter.js"></script>
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    $(document).on("click", "#btnTest", function () {
+        let L_Big = $("#text_L_Big").val();
+        let sum_P2 = $("#text_sum_P2").val();
+        let Pc_B = $("#text_Pc_B").val();
+        let L_small = $("#text_L_small").val();
+        let KS = $("#text_KS").val();
+        let PS = $("#text_PS").val();
+        let Pc_S = $("#text_Pc_S").val();
+        // alert("LD : "+LD+ '\n'+ "P2 :"+P2);
+        let send = "ยอดการผลิต\n"
+        send += "-หลอดใหญ่ : " + L_Big + " เซ็ต\n";
+        send += "-รวมP2 : " + sum_P2 + " แพ็ค\n";
+        send += "-Pc-B : " + Pc_B + " แพ็ค";
+        send += "-หลอดเล็ก : " + L_small + " แพ็ค\n";
+        send += "-กระสอบ : " + KS + " แพ็ค\n";
+        send += "-PS : " + PS + " แพ็ค\n";
+        send += "-Pc-S : " + Pc_S + " แพ็ค\n";
+
+
+        //confirm
+        swal({
+            title: 'Confrim',
+            text: "กรุณาตรวจสอบความถูกต้องของข้อมูล",
+            icon: 'info',
+            buttons: {
+                cancel: true,
+                confirm: true,
+            },
+        }).then(function (confirm) {
+            if (confirm) {
+                SendMessage_Confirm();
+            }
+        })
+
+
+
+    });
+    function SendMessage_Confirm() {
+        liff.sendMessages([{
+            'type': 'text',
+            'text': 'ยอดการผลิต'
+        }]).then(function () {
+            // window.alert('Message sent');
+            liff.closeWindow();
+        }).catch(function (error) {
+            window.alert('Error sending message: ' + error);
+        });
+    }
+</script>

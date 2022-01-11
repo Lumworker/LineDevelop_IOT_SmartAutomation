@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOT Register</title>
+
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/jquery-ui.css" rel="stylesheet" />
+    <link href="Content/fontawesome/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="Content/sideNav.css" rel="stylesheet" />
+    <link href="Content/nprogress.css" rel="stylesheet" />
+    <link href="Content/animate.min.css" rel="stylesheet" />
+    <!--<link href="Content/custom.css" rel="stylesheet" />-->
+
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <style>
+        .boxlohinform {
+            background-color: #fff;
+            padding: 10px;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+            box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+        }
+
+
+        .fadeInDown {
+            -webkit-animation-name: fadeInDown;
+            animation-name: fadeInDown;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        @-webkit-keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            opacity: 0;
+            -webkit-animation: fadeIn ease-in 1;
+            -moz-animation: fadeIn ease-in 1;
+            animation: fadeIn ease-in 1;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            animation-duration: 1s;
+        }
+
+            .fadeIn.first {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                -webkit-animation-delay: 0.4s;
+                -moz-animation-delay: 0.4s;
+                animation-delay: 0.4s;
+            }
+
+            .fadeIn.second {
+                -webkit-animation-delay: 0.6s;
+                -moz-animation-delay: 0.6s;
+                animation-delay: 0.6s;
+            }
+
+            .fadeIn.third {
+                -webkit-animation-delay: 0.8s;
+                -moz-animation-delay: 0.8s;
+                animation-delay: 0.8s;
+            }
+
+            .fadeIn.fourth {
+                -webkit-animation-delay: 1s;
+                -moz-animation-delay: 1s;
+                animation-delay: 1s;
+            }
+
+        .underlineHover:after {
+            display: block;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 2px;
+            background-color: #56baed;
+            content: "";
+            transition: width 0.2s;
+        }
+
+        .underlineHover:hover {
+            color: #0d0d0d;
+        }
+
+            .underlineHover:hover:after {
+                width: 100%;
+            }
+
+        *:focus {
+            outline: none;
+        }
+
+        #icon {
+            width: 60%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+<body style="background-color: #56baed;">
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+    <script src="Scripts/bootstrap-datepicker.min.js"></script>
+
+
+
+    <div class="container body-content">
+
+        <div style="margin-top: 10px;">
+            <div class="login_wrapper" style="max-width:450px;margin:auto">
+                <div class="animate form login_form boxlohinform fadeInDown">
+                    <section class="login_content">
+                        <h1 class="fadeIn" style="margin-bottom: 10px;text-align:center;">
+                            <img src="Images/icon-40.png" id="PictureLine" style="max-width: 150px" />
+                        </h1>
+                        <div class="row form-group">
+                            <span class="col-md-12 col-xs-12" style="font-weight:bold;font-size:18px;">Line Name : </span>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" id="DisplayNameLine" class="fadeIn form-control" disabled />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <span class="col-md-12 col-xs-12" style="font-weight:bold;font-size:18px;">Line Token : </span>
+                            <div class="col-md-12 col-xs-12">
+                                <input type="text" id="LineTokenLine" class="fadeIn form-control" disabled />
+                            </div>
+                        </div>
+
+                        <div id="DisplayRegisterLineToken" style="display:none;">
+                            <hr style="border:1px solid #000" />
+                            <h3 class="fadeIn" style="margin-top: 0;">Register Line</h3>
+                            <div class="form-group">
+                                <input type="text" id="username" class="fadeIn form-control" placeholder="Username" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" class="fadeIn form-control" placeholder="Password" />
+                            </div>
+                            <div class="form-group">
+                                <button id="btnRegisterLineToken" class="fadeIn btn btn-default btn-block" style="margin-left: 0; color: #fff; background-color: #337ab7;" type="button">Register</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <footer>
+            <p>&copy; 2019 - IOT Smart Automation Patkol</p>
+        </footer>
+    </div>
+
+    <div class="modal fade" id="IMGUpload" style="display: none; position: fixed; z-index: 9999; overflow: auto; top: 40%; left: 35%" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <img src="Images/PATKOL2.gif" class="modal-content " style="width: 10em; height: 10em;" />
+        </div>
+    </div>
+
+
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <!--<script src="Scripts/liff-starter.js"></script>-->
+    <script>
+
+        $(document).ready(function (e) {
+
+            var GetLiffID = getAllUrlParams("LiffID");
+            const defaultLiffId = GetLiffID; //?LiffID=1623482821-1py6QaL6
+            let myLiffId = GetLiffID;
+            
+            myLiffId = defaultLiffId;
+            if (myLiffId) {
+                liff.init({
+                    liffId: myLiffId
+                }).then(() => {
+                    $("#IMGUpload").modal('show');
+
+                    liff.getProfile().then(function (profile) {
+                        let LineToken = profile.userId;
+                        document.getElementById('LineTokenLine').value = profile.userId;
+                        document.getElementById('DisplayNameLine').value = profile.displayName;
+                        document.getElementById('PictureLine').src = profile.pictureUrl;
+                        $.ajax({
+                            type: "POST",
+                            async: true,
+                            url: "MaintanceMahcine.aspx/GetCheckLineToken",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            data: JSON.stringify({ LineToken: LineToken }),
+                            success: function (response) {
+                                if (response.d.length > 0) {
+                                    $("#DisplayRegisterLineToken").hide();
+                                    $("#IMGUpload").modal('hide');
+                                } else {
+                                    $("#DisplayRegisterLineToken").show();
+                                    $("#IMGUpload").modal('hide');
+                                    alert("You haven't register LINE");
+                                }
+                            }
+                        });
+
+
+                    }).catch(function (error) {
+                        window.alert('Error getting profile: ' + error);
+                        $("#IMGUpload").modal('hide');
+                    });
+                }).catch((err) => {
+                    $("#IMGUpload").modal('hide');
+                });
+            }
+
+
+            $("#btnRegisterLineToken").on('click', function () {
+                $("#IMGUpload").modal('show');
+                var username = $("#username").val();
+                var password = $("#password").val();
+                var LineToken = $("#LineTokenLine").val();
+
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: "MaintanceMahcine.aspx/RegisterLineToken",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({ username: username, password: password, lineToken: LineToken }),
+                    success: function (response) {
+                        if (response.d == "Success") {
+                            alert("Register Complete");
+                            $("#DisplayRegisterLineToken").hide();
+                            $("#IMGUpload").modal('hide');
+                        } else {
+                            alert("Register Fail");
+                            $("#IMGUpload").modal('hide');
+                        }
+                    }
+                });
+            });
+
+
+        });
+
+
+        function DetectInternalApp() {
+            var UA = navigator.userAgent || navigator.vendor || window.opera;
+
+            var isLINE = function (UA) {
+                return UA.indexOf("Line/") > -1;
+            };
+
+            var isFacebook = function (UA) {
+                return UA.indexOf("FBAN") > -1 || UA.indexOf("FBAV/") > -1;
+            };
+
+            if (isLINE(UA)) {
+                return "LINE";
+            }
+            if (isFacebook(UA)) {
+                return "Facebook";
+            }
+
+            return false;
+        }
+
+        function getAllUrlParams(sParam) {
+
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
